@@ -12,6 +12,7 @@ TagManager:
   - Bin
   - Trash
   - Trash_B3
+  - Audio
   layers:
   - Default
   - TransparentFX

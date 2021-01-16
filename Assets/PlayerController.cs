@@ -7,7 +7,6 @@ public class PlayerController : KinematicObject
 {
     public InventoryController inventoryC;
     public GrabController grabC;
-    [SerializeField] private GameController gameC;
 
     private bool isTouchingBin = false;
     //public GameObject inventory;
@@ -19,6 +18,7 @@ public class PlayerController : KinematicObject
             inventoryC.remove(grabC.currSpriteIndex);
             grabC.grabOnHand(-1);
             gameC.decTrash();
+            gameC.playAudio(GameController.Audio.THROW);
         }
     }
 
@@ -27,9 +27,10 @@ public class PlayerController : KinematicObject
         base.OnTriggerEnter2D(hit);
         switch (hit.gameObject.tag) {
             case "Collectible": {
-               var spriteR = hit.gameObject.GetComponent<SpriteRenderer>();
-               grabToInventory(spriteR);
-               break;
+                    var spriteR = hit.gameObject.GetComponent<SpriteRenderer>();
+                    grabToInventory(spriteR);
+                    gameC.playAudio(GameController.Audio.COLLECT);
+                    break;
             }
             case "Bin": 
                 {

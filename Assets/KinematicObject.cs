@@ -9,6 +9,8 @@ namespace Assets
 {
     public class KinematicObject : MonoBehaviour
     {
+        [SerializeField] protected GameController gameC;
+
         public LayerMask ground;
         public LayerMask collictible;
         public LayerMask water;
@@ -114,6 +116,7 @@ namespace Assets
                     jumpCount++;
                     anim.SetBool("ground", true);
                     anim.SetBool("jumping", rb.velocity.y > 0);
+                    gameC.playAudio(GameController.Audio.JUMP);
                 }
             }
         }

@@ -283,6 +283,7 @@ MonoBehaviour:
   waterC: {fileID: 0}
   inventoryC: {fileID: 0}
   grabC: {fileID: 6226012370561549317}
+  gameC: {fileID: 0}
 --- !u!95 &6226012372029625930
 Animator:
   serializedVersion: 3
