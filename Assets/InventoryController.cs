@@ -46,6 +46,7 @@ namespace Assets
             var comp = crateFills[index].GetComponent<SpriteRenderer>();
             var old = comp.sprite;
             comp.sprite = null;
+            sprites[index] = null;
             if (index < cratePointer)
                 cratePointer = index;
             return old;

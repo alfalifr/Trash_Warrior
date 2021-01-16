@@ -196,6 +196,11 @@ namespace Assets
             }
         }
 
+        protected void OnCollisionEnter(Collision collision)
+        {
+            print("collsision enter tag= " + collision.gameObject.tag);
+        }
+
         public bool isInside(Collider2D obj) {
             var cb = coll.bounds;
             var perimeter = obj.ClosestPoint(cb.center);

@@ -14,7 +14,7 @@ public class PlayerController : KinematicObject
 
     protected new void Update() {
         base.Update();
-        if (Input.GetKeyDown(KeyCode.Q) && isTouchingBin) {
+        if (Input.GetKeyDown(KeyCode.Q) && isTouchingBin && grabC.currSprite != null) {
             inventoryC.remove(grabC.currSpriteIndex);
             grabC.grabOnHand(-1);
         }
