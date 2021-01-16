@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Collectible
+  - Enemy
+  - Water
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - BG
+  - Water
+  - FG_back
+  - FG
+  - Interactable
+  - Player
+  - Control
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BG
+    uniqueID: 223878621
+    locked: 0
+  - name: FG_back
+    uniqueID: 377623291
+    locked: 0
+  - name: Water
+    uniqueID: 4266317295
+    locked: 0
+  - name: FG
+    uniqueID: 2065033951
+    locked: 0
+  - name: Interactable
+    uniqueID: 3999285447
+    locked: 0
+  - name: Player
+    uniqueID: 2768844667
+    locked: 0
+  - name: Control
+    uniqueID: 4289437405
+    locked: 0
+  - name: Control_front
+    uniqueID: 1201789469
+    locked: 0
