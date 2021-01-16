@@ -7,6 +7,8 @@ public class GameController : MonoBehaviour
 {
     //private GameObject[] 
     [SerializeField] private Text winTxt;
+    [SerializeField] private Text remTxt;
+    [SerializeField] private Text trashTxt;
     private GameObject[] audios;
     public int trashCount { private set; get; }
     public AudioSource currAudio { private set; get; }
@@ -23,6 +25,7 @@ public class GameController : MonoBehaviour
     {
         trashCount = GameObject.FindGameObjectsWithTag("Collectible").Length;
         audios = GameObject.FindGameObjectsWithTag("Audio");
+        remTxt.text = trashCount.ToString();
         print("trashCount= " + trashCount);
     }
 
@@ -38,7 +41,10 @@ public class GameController : MonoBehaviour
             playAudio(GameController.Audio.WIN);
             playAudio(GameController.Audio.BG, false);
             print("winTxt.enabled= " + winTxt.enabled);
+            remTxt.gameObject.SetActive(false);
+            trashTxt.gameObject.SetActive(false);
         }
+        remTxt.text = trashCount.ToString();
         print("decTrash.trashCount= " + trashCount);
     }
 

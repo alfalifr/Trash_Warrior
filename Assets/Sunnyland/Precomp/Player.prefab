@@ -115,7 +115,7 @@ SpriteRenderer:
   m_SortingLayerID: -1526122629
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bd59bf2e866ed4529ae645637eb9c11d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,7 +123,7 @@ SpriteRenderer:
   m_Size: {x: 0.9375, y: 0.8125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6226012372029625920
@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c92c17df1ad72441a88f095276107fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameC: {fileID: 0}
   ground:
     serializedVersion: 2
     m_Bits: 2048
@@ -283,7 +284,6 @@ MonoBehaviour:
   waterC: {fileID: 0}
   inventoryC: {fileID: 0}
   grabC: {fileID: 6226012370561549317}
-  gameC: {fileID: 0}
 --- !u!95 &6226012372029625930
 Animator:
   serializedVersion: 3

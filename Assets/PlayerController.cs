@@ -27,9 +27,11 @@ public class PlayerController : KinematicObject
         base.OnTriggerEnter2D(hit);
         switch (hit.gameObject.tag) {
             case "Collectible": {
-                    var spriteR = hit.gameObject.GetComponent<SpriteRenderer>();
-                    grabToInventory(spriteR);
-                    gameC.playAudio(GameController.Audio.COLLECT);
+                    if (inventoryC.emptySpriteCount > 0) {
+                        var spriteR = hit.gameObject.GetComponent<SpriteRenderer>();
+                        grabToInventory(spriteR);
+                        gameC.playAudio(GameController.Audio.COLLECT);
+                    }
                     break;
             }
             case "Bin": 

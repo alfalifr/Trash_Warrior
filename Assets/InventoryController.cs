@@ -12,7 +12,7 @@ namespace Assets
         private GameObject[] crates;
         private GameObject[] crateFills;
         private Sprite[] sprites;
-        private int emptySpriteCount = 0;
+        public int emptySpriteCount { private set; get; } = 0;
         private int cratePointer = 0;
 
         private void Start()
@@ -29,7 +29,7 @@ namespace Assets
             print("index_ = " + index_  + " ssprites.Length= " + sprites.Length + " crateFills.Length= " + crateFills.Length);
             crateFills[index_].GetComponent<SpriteRenderer>().sprite = s;
             sprites[index_] = s;
-            if (s != null && cratePointer < sprites.Length -1)
+            if (s != null && cratePointer < sprites.Length)
             {
                 cratePointer++;
                 emptySpriteCount--;
@@ -47,6 +47,8 @@ namespace Assets
             var old = comp.sprite;
             comp.sprite = null;
             sprites[index] = null;
+            if (old != null)
+                emptySpriteCount++;
             if (index < cratePointer)
                 cratePointer = index;
             return old;
