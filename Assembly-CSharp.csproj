@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraController.cs" />
+    <Compile Include="Assets\GameController.cs" />
     <Compile Include="Assets\GrabController.cs" />
     <Compile Include="Assets\InventoryController.cs" />
     <Compile Include="Assets\KinematicObject.cs" />

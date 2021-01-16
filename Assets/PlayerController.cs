@@ -7,6 +7,7 @@ public class PlayerController : KinematicObject
 {
     public InventoryController inventoryC;
     public GrabController grabC;
+    [SerializeField] private GameController gameC;
 
     private bool isTouchingBin = false;
     //public GameObject inventory;
@@ -17,6 +18,7 @@ public class PlayerController : KinematicObject
         if (Input.GetKeyDown(KeyCode.Q) && isTouchingBin && grabC.currSprite != null) {
             inventoryC.remove(grabC.currSpriteIndex);
             grabC.grabOnHand(-1);
+            gameC.decTrash();
         }
     }
 
