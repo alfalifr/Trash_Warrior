@@ -1,6 +1,7 @@
 /Temp
 /Logs
 /obj
+/Library
 /.vs
 /.git
 *.meta

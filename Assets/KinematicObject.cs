@@ -50,7 +50,7 @@ namespace Assets
         }
 
         // Update is called once per frame
-        void Update()
+        protected void Update()
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
             {
@@ -149,7 +149,7 @@ namespace Assets
             }
         }
 */
-        void OnTriggerEnter2D(Collider2D hit)
+        protected void OnTriggerEnter2D(Collider2D hit)
         {
             if (hit.gameObject.tag == "Water")
             {
@@ -162,7 +162,7 @@ namespace Assets
             }
         }
 
-        void OnTriggerExit2D(Collider2D hit)
+        protected void OnTriggerExit2D(Collider2D hit)
         {
             //print(hit.gameObject.tag);
             if (hit.gameObject.tag == "Water")
@@ -170,8 +170,7 @@ namespace Assets
                 //var wb2 = hit.bounds;
                 var cb = coll.bounds;
 
-                
-                
+               
                 //print("cb.extents.x < wb.min.x => " + (cb.extents.x < wb.min.x) + " cb.min.y > wb.max.y => " + (cb.min.y > wb.max.y) + " cb.min.x > wb.max.x => " + (cb.min.x > wb.max.x) + " cb.max.y < wb.min.y => " + (cb.max.y < wb.min.y));
                 //print("cb.max= " + cb.max + " cb.min= " + cb.min + " cb.extents= " + cb.extents + " cb.size= " + cb.size);
                 //print("wb2.max= " + wb2.max + " wb2.min= " + wb2.min + " wb2.extents= " + wb2.extents + " wb2.size= " + wb2.size + " wb2.center= " + wb2.center);
@@ -180,8 +179,8 @@ namespace Assets
                 //print("hit.OverlapPoint(bc.bounds.center)= " + hit.OverlapPoint(cb.center) + " waterC.OverlapPoint(cb.center)= " + waterC.OverlapPoint(cb.center) + " waterC.ClosestPoint(cb.center)= " + waterC.ClosestPoint(cb.center));
                 //print("(cb.max.x < wb2.min.x)= " + (cb.max.x < wb2.min.x) + " (cb.min.x > wb2.max.x)= " + (cb.min.x > wb2.max.x) + " (cb.min.y > wb2.max.y)= " + (cb.min.y > wb2.max.y) + " (cb.max.y < wb2.min.y)= " + (cb.max.y < wb2.min.y));
 
-                var waterPerimeter = waterC.ClosestPoint(cb.center);
-                if (cb.max.x < waterPerimeter.x || cb.min.x > waterPerimeter.x || cb.min.y > waterPerimeter.y || cb.max.y < waterPerimeter.y)
+                //var waterPerimeter = waterC.ClosestPoint(cb.center);
+                if (isInside(waterC))
                 {
                     print("OnTriggerExit2D di luar air bro!!!");
                     rb.gravityScale = _gravityScale;
@@ -195,6 +194,12 @@ namespace Assets
                 //print("cb.extents.x < wb.min.x => " + (cb.extents.x < wb.min.x) + " cb.min.y > wb.max.y => " + (cb.min.y > wb.max.y) + " cb.min.x > wb.max.x => " + (cb.min.x > wb.max.x) + " cb.max.y < wb.min.y => " + (cb.max.y < wb.min.y));
                 //print("maxSpeed= " + maxSpeed);
             }
+        }
+
+        public bool isInside(Collider2D obj) {
+            var cb = coll.bounds;
+            var perimeter = obj.ClosestPoint(cb.center);
+            return cb.max.x < perimeter.x || cb.min.x > perimeter.x || cb.min.y > perimeter.y || cb.max.y < perimeter.y;
         }
     }
 }
