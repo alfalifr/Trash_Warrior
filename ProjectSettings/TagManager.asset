@@ -13,6 +13,12 @@ TagManager:
   - Trash
   - Trash_B3
   - Audio
+  - T-Organic
+  - T-Anorganic
+  - T-Recyclable
+  - Bin-Organic
+  - Bin-Anorganic
+  - Bin-Recyclable
   layers:
   - Default
   - TransparentFX
@@ -29,8 +35,8 @@ TagManager:
   - Interactable
   - Player
   - Control
-  - 
-  - 
+  - bomb
+  - Trash
   - 
   - 
   - 

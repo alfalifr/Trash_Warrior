@@ -32,7 +32,7 @@ public class GrabController : MonoBehaviour
     public void grabOnHand(int index) {
         if (index >= 0)
         {
-            currSprite = inventoryC.get(index);
+            currSprite = inventoryC.get(index).Item1;
             currSpriteIndex = index;
         }
         else {

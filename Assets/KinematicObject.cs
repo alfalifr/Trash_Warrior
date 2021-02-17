@@ -183,7 +183,7 @@ namespace Assets
                 //print("(cb.max.x < wb2.min.x)= " + (cb.max.x < wb2.min.x) + " (cb.min.x > wb2.max.x)= " + (cb.min.x > wb2.max.x) + " (cb.min.y > wb2.max.y)= " + (cb.min.y > wb2.max.y) + " (cb.max.y < wb2.min.y)= " + (cb.max.y < wb2.min.y));
 
                 //var waterPerimeter = waterC.ClosestPoint(cb.center);
-                if (isInside(waterC))
+                if (!isInside(waterC))
                 {
                     print("OnTriggerExit2D di luar air bro!!!");
                     rb.gravityScale = _gravityScale;
@@ -207,7 +207,7 @@ namespace Assets
         public bool isInside(Collider2D obj) {
             var cb = coll.bounds;
             var perimeter = obj.ClosestPoint(cb.center);
-            return cb.max.x < perimeter.x || cb.min.x > perimeter.x || cb.min.y > perimeter.y || cb.max.y < perimeter.y;
+            return !(cb.max.x < perimeter.x || cb.min.x > perimeter.x || cb.min.y > perimeter.y || cb.max.y < perimeter.y);
         }
     }
 }
